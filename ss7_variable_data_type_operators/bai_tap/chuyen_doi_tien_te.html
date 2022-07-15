@@ -7,4 +7,30 @@
 <body>
 $END$
 </body>
+<script>
+    let result;
+    let click = document.getElementById("click");
+    click.addEventListener("click",chuyen_doi);
+    function chuyen_doi() {
+        let amount = parseInt(document.getElementById("amount").value);
+        let select1 = document.getElementById("select1").value;
+        let select2 = document.getElementById("select2").value;
+        if (select1 =="vnd" && select2 =="usd"){
+            result = amount * 0.000043;
+            document.getElementById("result").innerText = result ;
+        }else if (select1 == "usd" && select2 =="vnd"){
+            result = amount*23352;
+            formatter.format(1000);
+            document.getElementById("result").innerText = result;
+            document.getElementById("amount2").innerText = amount;
+        }else if (select1 == "vnd" && select2 =="vnd"){
+            document.getElementById("result").innerText = amount;
+            document.getElementById("amount2").innerText = amount;
+        }else if (select1 == "usd" && select2 =="usd"){
+            document.getElementById("result").innerText = amount;
+            document.getElementById("amount2").innerText = amount;
+        }
+    }
+
+</script>
 </html>
