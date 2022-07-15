@@ -2,9 +2,80 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Biến, kiểu dữ liệu và toán tử</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <style>
+        .btn{
+            margin: 10px;
+        }
+    </style>
 </head>
 <body>
-$END$
+<div class="container mt-3">
+    <div>
+        <h3>Bài 1. HIển thị điểm trung bình cộng và tổng</h3>
+        <span>Vật lý</span>
+        <input type="number" name="physics" id="physics">
+        <span>Hoá học</span>
+        <input type="number" name="chemistry" id="chemistry">
+        <span>Sinh học</span>
+        <input type="number" name="biology" id="biology"> <br>
+        <button type="button"  class="btn btn-primary" id="btn_bai1">Thực hiện</button> <br>
+
+        <span >Điểm trung bình:</span> <span id="average">...</span><br>
+        <span >Điểm tổng:</span> <span id="sum">...</span>
+    </div>
+    <div>
+        <h3>Bài 2. Chuyển đổi nhiệt độ</h3>
+        <input type="number" id="celsius" style="width:50px" >
+        <span>
+            <sup>o</sup>C
+            <i style='font-size:24px' class='fas'>&#xf30b;</i>
+        </span>
+        <span  id="fahrenheit" style="width:50px"></span> <sup>o</sup>F <br>
+        <button type="button"  class="btn btn-primary" id="btn_bai2">Thực hiện</button> <br>
+    </div>
+    <div>
+        <h3>Bài 3. Tính diện tích và chu vi hình tròn</h3>
+        <span>Nhập bán kính hình tròn</span>
+        <input type="number" name="radius" id="radius"> <br>
+        <span >Chu vi hình tròn:</span> <span id="perimeter">...</span><br>
+        <span >Diện tích hình tròn:</span> <span id="area">...</span><br>
+        <button type="button"  class="btn btn-primary" id="btn_bai3">Thực hiện</button>
+    </div>
+</div>
 </body>
+<script>
+    // Bài 1
+    let btn_bai1 =document.getElementById("btn_bai1");
+    btn_bai1.addEventListener("click", function_bai1);
+    function function_bai1() {
+        let physics = parseInt(document.getElementById("physics").value);
+        let chemistry = parseInt(document.getElementById("chemistry").value);
+        let biology = parseInt(document.getElementById("biology").value);
+        let average = (physics + chemistry + biology)/3;
+        let sum = physics+chemistry+biology;
+        document.getElementById("average").textContent = average;
+        document.getElementById("sum").textContent = sum;
+    }
+    // Bài 2
+    let btn_bai2 = document.getElementById("btn_bai2");
+    btn_bai2.addEventListener("click",function_bai2);
+    function  function_bai2() {
+        let cel =  parseInt(document.getElementById("celsius").value);
+        let fah = (cel*9)/5 +32;
+        let fahr = document.getElementById("fahrenheit").textContent = fah;
+    }
+    // Bài 3 - 4
+    let btn_bai3 = document.getElementById("btn_bai3");
+    btn_bai3.addEventListener("click", function_bai3);
+    function function_bai3() {
+        let radius = parseInt(document.getElementById("radius").value);
+        let per = radius * 2 * 3.14;
+        let area = radius * radius * 3.14
+        document.getElementById("perimeter").innerText = per;
+        document.getElementById("area").innerText = area;
+    }
+</script>
 </html>
