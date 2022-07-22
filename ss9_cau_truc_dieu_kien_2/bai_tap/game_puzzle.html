@@ -2,9 +2,198 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Game Puzzle</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <style>
+        img{
+            display: block;
+            padding: 0.2em;
+            width: 600px;
+            height: 150px;
+        }
+        input{
+            margin: 5px;
+        }
+        .box-shadow-red{
+            box-shadow: red 4px 4px 9px;
+        }
+        .box-shadow-black{
+            box-shadow: 2px 3px 3px black;
+        }
+    </style>
 </head>
 <body>
-$END$
+<div class="container mt-3">
+    <div>
+        <img id="img1" src="./img/funny-cat1_part1x1.jpg" alt  onclick="changeImage1()">
+        <img id="img2" src="./img/funny-cat1_part2x1.jpg" alt  onclick="changeImage2()">
+        <img id="img3" src="./img/funny-cat1_part3x1.jpg" alt  onclick="changeImage3()">
+        <img id="img4" src="./img/funny-cat1_part4x1.jpg" alt  onclick="changeImage4()">
+        <img id="img5" src="./img/funny-cat1_part5x1.jpg" alt  onclick="changeImage5()">
+    </div>
+</div>
 </body>
+<script>
+    let img1,img2,img3,img4,img5;
+    function init() {
+        let arrImg1 = ['funny-cat1_part1x1.jpg','monkey_part1x1.jpg','panda_swap_part1x1.jpg']
+        let arrImg2 = ['funny-cat1_part2x1.jpg','monkey_part2x1.jpg','panda_swap_part2x1.jpg']
+        let arrImg3 = ['funny-cat1_part3x1.jpg','monkey_part3x1.jpg','panda_swap_part3x1.jpg']
+        let arrImg4 = ['funny-cat1_part4x1.jpg','monkey_part4x1.jpg','panda_swap_part4x1.jpg']
+        let arrImg5 = ['funny-cat1_part5x1.jpg','monkey_part5x1.jpg','panda_swap_part5x1.jpg']
+        let randomImg1 = Math.floor(Math.random() * 3);
+        let randomImg2 = Math.floor(Math.random() * 3);
+        let randomImg3 = Math.floor(Math.random() * 3);
+        let randomImg4 = Math.floor(Math.random() * 3);
+        let randomImg5 = Math.floor(Math.random() * 3);
+        img1=randomImg1+1;
+        img2=randomImg2+1;
+        img3=randomImg3+1;
+        img4=randomImg4+1;
+        img5=randomImg5+1;
+        alert(img1 +''+img2 +''+img3 +''+img4 +''+img5);
+        document.getElementById("img1").src = "./img/"+arrImg1[randomImg1];
+        document.getElementById("img2").src = "./img/"+arrImg2[randomImg2];
+        document.getElementById("img3").src = "./img/"+arrImg3[randomImg3];
+        document.getElementById("img4").src = "./img/"+arrImg4[randomImg4];
+        document.getElementById("img5").src = "./img/"+arrImg5[randomImg5];
+        checkImage();
+    }
+    init();
+    function checkImage() {
+        if (img1==img2 && img1==img3 && img1 ==img4 && img1==img5){
+            document.getElementById("img1").style.boxShadow = "red 4px 4px 9px";
+            document.getElementById("img2").style.boxShadow = "red 4px 4px 9px";
+            document.getElementById("img3").style.boxShadow = "red 4px 4px 9px";
+            document.getElementById("img4").style.boxShadow = "red 4px 4px 9px";
+            document.getElementById("img5").style.boxShadow = "red 4px 4px 9px";
+        }else {
+            document.getElementById("img1").style.boxShadow = "2px 3px 3px black";
+            document.getElementById("img2").style.boxShadow = "2px 3px 3px black";
+            document.getElementById("img3").style.boxShadow = "2px 3px 3px black";
+            document.getElementById("img4").style.boxShadow = "2px 3px 3px black";
+            document.getElementById("img5").style.boxShadow = "2px 3px 3px black";
+        }
+    }
+    function changeImage1() {
+        let src = document.getElementById("img1").src;
+        let indexOfFirst = src.lastIndexOf('/');
+        let strSrc = src.slice(indexOfFirst+1,src.length);
+        let numImg =0;
+        switch (strSrc) {
+            case 'funny-cat1_part1x1.jpg':
+                document.getElementById("img1").src = "./img/monkey_part1x1.jpg";
+                img1 = 2;
+                checkImage();
+                break;
+            case 'monkey_part1x1.jpg':
+                document.getElementById("img1").src = "./img/panda_swap_part1x1.jpg";
+                img1 = 3;
+                checkImage();
+                break;
+            case 'panda_swap_part1x1.jpg':
+                document.getElementById("img1").src = "./img/funny-cat1_part1x1.jpg";
+                img1 = 1;
+                checkImage();
+                break;
+        }
+    }
+    function changeImage2() {
+        let src = document.getElementById("img2").src;
+        let indexOfFirst = src.lastIndexOf('/');
+        let strSrc = src.slice(indexOfFirst+1,src.length);
+        let numImg =0;
+        switch (strSrc) {
+            case 'funny-cat1_part2x1.jpg':
+                document.getElementById("img2").src = "./img/monkey_part2x1.jpg";
+                img2 = 2;
+                checkImage();
+                break;
+            case 'monkey_part2x1.jpg':
+                document.getElementById("img2").src = "./img/panda_swap_part2x1.jpg";
+                img2 = 3;
+                checkImage();
+                break;
+            case 'panda_swap_part2x1.jpg':
+                document.getElementById("img2").src = "./img/funny-cat1_part2x1.jpg";
+                img2 = 1;
+                checkImage();
+                break;
+        }
+
+    }
+    function changeImage3() {
+        let src = document.getElementById("img3").src;
+        let indexOfFirst = src.lastIndexOf('/');
+        let strSrc = src.slice(indexOfFirst+1,src.length);
+        let numImg =0;
+        switch (strSrc) {
+            case 'funny-cat1_part3x1.jpg':
+                document.getElementById("img3").src = "./img/monkey_part3x1.jpg";
+                img3 = 2;
+                checkImage();
+                break;
+            case 'monkey_part3x1.jpg':
+                document.getElementById("img3").src = "./img/panda_swap_part3x1.jpg";
+                img3 = 3;
+                checkImage();
+                break;
+            case 'panda_swap_part3x1.jpg':
+                document.getElementById("img3").src = "./img/funny-cat1_part3x1.jpg";
+                img3 = 1;
+                checkImage();
+                break;
+        }
+
+    }
+    function changeImage4() {
+        let src = document.getElementById("img4").src;
+        let indexOfFirst = src.lastIndexOf('/');
+        let strSrc = src.slice(indexOfFirst+1,src.length);
+        switch (strSrc) {
+            case 'funny-cat1_part4x1.jpg':
+                document.getElementById("img4").src = "./img/monkey_part4x1.jpg";
+                img4 = 2;
+                checkImage();
+                break;
+            case 'monkey_part4x1.jpg':
+                document.getElementById("img4").src = "./img/panda_swap_part4x1.jpg";
+                img4= 3;
+                checkImage();
+                break;
+            case 'panda_swap_part4x1.jpg':
+                document.getElementById("img4").src = "./img/funny-cat1_part4x1.jpg";
+                img4 = 1;
+                checkImage();
+                break;
+        }
+
+    }
+    function changeImage5() {
+        let src = document.getElementById("img5").src;
+        let indexOfFirst = src.lastIndexOf('/');
+        let strSrc = src.slice(indexOfFirst+1,src.length);
+        let numImg =0;
+        switch (strSrc) {
+            case 'funny-cat1_part5x1.jpg':
+                document.getElementById("img5").src = "./img/monkey_part5x1.jpg";
+                img5 = 2;
+                checkImage();
+                break;
+            case 'monkey_part5x1.jpg':
+                document.getElementById("img5").src = "./img/panda_swap_part5x1.jpg";
+                img5 = 3;
+                checkImage();
+                break;
+            case 'panda_swap_part5x1.jpg':
+                document.getElementById("img5").src = "./img/funny-cat1_part5x1.jpg";
+                img5 = 1;
+                checkImage();
+                break;
+        }
+
+    }
+
+</script>
 </html>
