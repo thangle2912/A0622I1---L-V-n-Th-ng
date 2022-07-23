@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cấu trúc điều kiện 2 - Bài 5</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .btn{
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-3">
+    <h4> Giải phương trình bậc 1 có dạng ax + b =0 !</h4>
+    <div>
+        <span>Nhập a, b</span>
+        <input type="number"  id="a">
+        <input type="number"  id="b">
+        <button type="button"  class="btn btn-primary" onclick="giaiPhuongTrinh()">Giải phương trình</button> <br>
+        <p id="result"></p>
+    </div>
+</div>
+</body>
+<script>
+    function giaiPhuongTrinh() {
+        let a = parseFloat(document.getElementById("a").value);
+        let b = parseFloat(document.getElementById("b").value);
+        let result;
+        if (a == 0){
+            if (b==0){
+                result ="Phương trình vô số nghiệm";
+            }else {
+                result ="Phương trình vô nghiệm";
+            }
+        }else {
+            result = -b/a;
+        }
+        document.getElementById("result").textContent = result;
+    }
+</script>
+</html>

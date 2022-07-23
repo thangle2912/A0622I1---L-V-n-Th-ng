@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Câu điều kiện 1 - Bài 5</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .btn{
+            margin: 10px;
+        }
+        input{
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-3">
+    <h4>Xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ !</h4>
+    <div>
+        <span>Điểm bài kiểm tra</span>
+        <input type="number"  id="diemKiemTra"><br>
+        <span>Điểm bài giữa kì</span>
+        <input type="number"  id="diemGiuaKi"><br>
+        <span>Điểm bài cuối kì</span>
+        <input type="number"  id="diemCuoiKi"><br>
+        <button type="button"  class="btn btn-primary" onclick="funcTinh()">Tính toán</button> <br>
+        <p id="result1"></p>
+        <p id="result2"></p>
+    </div>
+</div>
+</body>
+<script>
+    function funcTinh() {
+        let diemKiemTra = parseFloat(document.getElementById("diemKiemTra").value);
+        let diemGiuaKi = parseFloat(document.getElementById("diemGiuaKi").value);
+        let diemCuoiKi = parseFloat(document.getElementById("diemCuoiKi").value);
+        let diemTrungBinh = diemKiemTra*0.2 + diemGiuaKi *0.3 + diemCuoiKi*0.5;
+        let result;
+        if (diemTrungBinh>=9){
+            result = "Xuất sắc !";
+        }else if (diemTrungBinh>=8){
+            result = "Giỏi !";
+        }else if (diemTrungBinh >=7){
+            result = "Khá !";
+        }else if (diemTrungBinh>=6){
+            result = "Trung bình !";
+        }else if (diemTrungBinh>=5){
+            result = "Yếu !";
+        }else {
+            result = "Không đạt !";
+        }
+        document.getElementById("result1").textContent = "Điểm trung bình : "diemTrungBinh ;
+        document.getElementById("result2").textContent = result;
+    }
+</script>
+</html>
