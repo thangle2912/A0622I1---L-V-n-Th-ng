@@ -16,7 +16,7 @@
     <h4> Viết chương trình tính thuế thu nhập cá nhân !</h4>
     <div>
         <span>Thu nhập cá nhân hàng tháng</span>
-        <input type="number"  id="money"> vnđ
+        <input type="number"  id="thuNhap"> vnđ
         <button type="button"  class="btn btn-primary" onclick="tinhThue()">Tính thuế</button> <br>
         <p id="result"></p>
     </div>
@@ -24,15 +24,33 @@
 </body>
 <script>
     function tinhThue() {
-        let elect = parseFloat(document.getElementById("elect").value);
-        let result;
-        if (elect>0 && elect<=50){
-            result = elect*1678;
+        let thuNhap = parseFloat(document.getElementById("thuNhap").value);
+        let thue;
+        if (thuNhap <= 5000000){
+            thue = thuNhap*0.05;
         }
-        result = parseInt(result);
-        result = Number(result);
-        result = result.toLocaleString("en");
-        document.getElementById("result").textContent = "Giá tiền điện là: " + result+ " vnđ";
+        else if (5000000 < thuNhap <= 10000000){
+            thue = thuNhap*0.1 - 250000;
+        }
+        else if (10000000 < thuNhap <= 18000000){
+            thue = thuNhap*0.15 - 750000;
+        }
+        else if (18000000 < thuNhap <= 32000000){
+            thue = thuNhap*0.2 - 1650000;
+        }
+        else if (32000000 < thuNhap <= 52000000){
+            thue = thuNhap*0.25 - 3250000;
+        }
+        else if (52000000 < thuNhap <= 80000000){
+            thue = thuNhap*0.3 - 5850000;
+        }
+        else {
+            thue = thunhap*0.35 - 9850000;
+        }
+        thue = Number(thue);
+        thue = thue.toLocaleString("en");
+        document.getElementById("result").textContent = thue +" vnd";
+
     }
 </script>
 </html>

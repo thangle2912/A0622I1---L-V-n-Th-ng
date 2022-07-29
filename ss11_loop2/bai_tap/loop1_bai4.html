@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cấu trúc lặp 1 - Bài 4</title>
+</head>
+<body>
+
+</body>
+<script>
+    let count = 0;
+    let num1 =1, num2 =1, kq = 0;
+    while (count <20){
+        kq = num1+num2;
+        if (kiemTra(kq)){
+            document.write(kq);
+            break;
+        }
+        num1= num2;
+        num2= kq;
+        count++;
+    }
+    function kiemTra(n) {
+        if (n %5 == 0){
+            return true;
+        }
+        return false;
+    }
+</script>
+</html>
