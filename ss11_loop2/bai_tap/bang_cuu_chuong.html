@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sinh bảng cửu chương</title>
+    <style>
+        table{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+</body>
+
+<script>
+    let div;
+    div = "<table border='1' cellpadding='0' cellspacing='3'>";
+    for (let i=1;i<=9;i++){
+        div = div +"<tr>";
+        for (let j =2;j<=9;j++){
+            div = div +"<td>"+ j +" x " +i+" = "+j*i+"</td>"
+        }
+        div = div +"</tr>";
+    }
+    div = div +"</table>";
+    document.write(div);
+
+</script>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cấu trúc lặp 2 - Bài 5</title>
+</head>
+<body>
+
+</body>
+<script>
+    let money = parseFloat(prompt("Số tiền đã vay :"));
+    let month = parseFloat(prompt("Số tháng vay :"));
+    let rate = parseFloat(prompt("Số lãi hàng tháng (%) :"))/100;
+    let result =money+(money*rate);
+    for (let i=2; i<=month;i++){
+        result=result+(result*rate);
+    }
+    result = parseInt(result);
+    result = Number(result);
+    result = result.toLocaleString("en");
+    alert(result);
+
+</script>
+</html>

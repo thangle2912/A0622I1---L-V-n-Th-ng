@@ -2,9 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Cấu trúc lặp 1 - Bài 5</title>
 </head>
 <body>
-$END$
+
 </body>
+<script>
+    let count = 0;
+    let num1 =1, num2 =1, kq = 0;
+    let sum = num2 +num1;
+    while (count <20){
+        kq = num1+num2;
+        sum += kq;
+        num1= num2;
+        num2= kq;
+        count++;
+    }
+    document.write(sum);
+</script>
 </html>

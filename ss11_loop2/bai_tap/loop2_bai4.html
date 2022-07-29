@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cấu trúc lặp 2 - Bài 4</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+</body>
+<script>
+    let space = "&nbsp&nbsp";
+    let width = parseInt(prompt("Nhập chiều rộng :"));
+    let height = parseInt(prompt("Nhập chiều dài : "));;
+    for (let i =1 ; i<=width;i++){
+        for (let j = 1;j<=height;j++){
+            if (i==1 || j==1||i==width||j==height){
+                document.write("*");
+            }else {
+                document.write(space)
+            }
+        }
+        document.write("<br>")
+    }
+</script>
+</html>

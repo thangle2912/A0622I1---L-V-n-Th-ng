@@ -2,9 +2,65 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Cấu trúc lặp 2 - Bài 3</title>
 </head>
 <body>
-$END$
+
 </body>
+<script>
+    veHinh1();
+    document.write('<br>');
+    veHinh2();
+    document.write('<br>');
+    veHinh3();
+    document.write('<br>');
+    veHinh4();
+    function veHinh1() {
+        let size =5;
+        let row=1;
+        while (row <=size){
+            for (let i=1; i<=row;i++){
+                document.write('*');
+            }
+            document.write('<br>');
+            row++;
+        }
+
+    }
+    function veHinh2() {
+        let size =5;
+        let row=1;
+        while (row <=size){
+            for (let i=size; i>=row;i--){
+                document.write('*');
+            }
+            document.write('<br>');
+            row++;
+        }
+    }
+    function veHinh3(){
+        let space = "&nbsp&nbsp";
+        for (let i =0; i <= 5; i++) {
+            for (let j = 0; j <= 4; j++) {
+                if(j<5-i){
+                    document.write(space);
+                }else{
+                    document.write("*");
+                }
+            }document.write("<br>");
+        }
+    }
+    function veHinh4(){
+        for (let i = 5; i >= 1; i--){
+            for (let j = 1; j <= 5; j++){
+                if (j <= 5 - i){
+                    document.write("&nbsp&nbsp");
+                }else {
+                    document.write("*")
+                }
+            }
+            document.write('<br>');
+        }
+    }
+</script>
 </html>

@@ -2,9 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Cấu trúc lặp 1 - Bài 8</title>
 </head>
 <body>
-$END$
+    <button onclick="begin()">Chơi</button>
 </body>
+<script>
+    function begin() {
+        let num1 = parseInt(prompt("Nhập khoảng sô muốn đoán: từ  "));
+        let num2 = parseInt(prompt("đến  :"));
+        let numRandom = Math.floor(Math.random() * (num2 - num1)) + num1 +1;
+        // 0->100
+        //5->10 => 0->4  +5
+
+        console.log(numRandom);
+        for (let i =1; i<=3;i++){
+            let yourNum = parseInt(prompt("Nhập số muốn đoán  "));
+            if (yourNum  == numRandom){
+                alert("Chúc mừng bạn đã đoán đúng");
+                break;
+            }else if (yourNum < numRandom){
+
+                alert("Số bạn đoán bé hơn kết quả");
+            }else {
+                alert("Số bạn đoán lớn hơn kết quả");
+            }
+        }
+    }
+
+</script>
 </html>

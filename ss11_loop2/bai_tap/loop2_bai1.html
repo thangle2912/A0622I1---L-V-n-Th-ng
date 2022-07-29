@@ -2,9 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Cấu trúc lặp 2 - Bài 1</title>
 </head>
 <body>
-$END$
+
 </body>
+<script>
+    let size = parseInt(prompt("Bạn muốn in bao nhiêu số trong dãy Fibonacci"));
+    let count = 0;
+    if (size <=2){
+        alert("Cần nhập số lớn hơn 2 !");
+    }else {
+        let num1 =1, num2 =1, kq = 0;
+        document.write(num1 + '<br>');
+        document.write(num2 + '<br>');
+        while (count <size-2){
+            kq = num1+num2;
+            document.write(kq + '<br>');
+            num1= num2;
+            num2= kq;
+            count++;
+        }
+    }
+</script>
 </html>
