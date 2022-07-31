@@ -10,6 +10,12 @@
 <script>
     do {
         var temp = parseInt(prompt("Cập nhật nhiệt độ hiện tại"));
+        if(temp<20){
+            alert("Hãy tăng nhiệt độ !");
+        }else if(temp >100){
+            alert("Hãy giảm nhiệt độ !");
+        }
     }while (temp <20 || temp >100 )
+
 </script>
 </html>
