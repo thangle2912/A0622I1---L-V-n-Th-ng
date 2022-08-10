@@ -2,9 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Luyện tập tạo và sử dụng hàm 02 - Bài 4</title>
 </head>
 <body>
-$END$
+
 </body>
+<script>
+    let inputCharacter = prompt("Nhập kí tự bất kì !");
+    let arrNumber = ["1", "2", "3", "4", "5", "6", "7", "8", "9","0"];
+
+    function checkNumber(character) {
+        if (arrNumber.indexOf(character) != -1) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+    if (inputCharacter.length>1){
+        alert("Không phải là kí tự !");
+    }else{
+        if (checkNumber(inputCharacter)) {
+            alert("Kí tự nhập vào là số !")
+        } else {
+            alert("Kí tự nhập vào không là số !")
+        }
+    }
+
+
+</script>
 </html>

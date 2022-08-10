@@ -2,9 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Luyện tập tạo và sử dụng hàm 02 - Bài 5</title>
 </head>
 <body>
-$END$
+
 </body>
+<script>
+    let numberA = parseInt(prompt("Nhập số thứ nhất !"));
+    let numberB = parseInt(prompt("Nhập số thứ hai !"));
+    let numberC = parseInt(prompt("Nhập số thứ ba !"));
+
+    function getMin(numA, numB, numC) {
+
+        if (numA <= numB && numA <= numC) {
+            return numA;
+        } else {
+            if (numB <=numC){
+                return numB;
+            }else {
+                return numC
+            }
+        }
+    }
+    alert("Số bé nhất trong 3 số là: "+ getMin(numberA,numberB,numberC));
+</script>
 </html>

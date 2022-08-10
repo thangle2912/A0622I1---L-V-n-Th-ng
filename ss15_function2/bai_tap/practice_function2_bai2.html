@@ -2,9 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Luyện tập tạo và sử dụng hàm 02 - Bài 2</title>
 </head>
 <body>
-$END$
+Nhập bán kính hình tròn : <input type="number" id="radius">
+<button onclick="getArea()">Tính diện tích</button>
+<button onclick="getPerimeter()">Tính chu vi</button>
 </body>
+<script>
+    const PI = 3.14;
+    function getArea() {
+        let inputRadius = parseFloat(document.getElementById("radius").value);
+        let result = PI * (inputRadius ** 2);
+        alert(result);
+    }
+
+    function getPerimeter() {
+        let inputRadius = parseFloat(document.getElementById("radius").value);
+        let result = 2 * PI * inputRadius;
+        alert(result);
+    }
+
+</script>
 </html>

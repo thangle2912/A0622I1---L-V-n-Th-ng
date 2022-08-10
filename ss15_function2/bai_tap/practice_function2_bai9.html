@@ -2,9 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Luyện tập tạo và sử dụng hàm 02 - Bài 8</title>
 </head>
 <body>
-$END$
+
 </body>
+<script>
+    let arrCharacter =["a","b","c","d","e","f","g","h","b","c","e"];
+    let inputCharacter = prompt("Nhập 1 kí tự bất kì !");
+    function swap(arr, character) {
+        let count =0;
+        for (let i = 0; i <arr.length; i++) {
+            if (character == arr[i]){
+                count++;
+            }
+        }
+        if (count>0){
+            return count;
+        }else {
+            return -1;
+        }
+    }
+    if (swap(arrCharacter,inputCharacter )!=-1){
+        alert("Kí tự "+inputCharacter+" xuất hiên "+swap(arrCharacter,inputCharacter )+" lần trong mảng");
+    }else {
+        alert("Kí tự không xuất hiện lần nào trong mảng")
+    }
+</script>
 </html>

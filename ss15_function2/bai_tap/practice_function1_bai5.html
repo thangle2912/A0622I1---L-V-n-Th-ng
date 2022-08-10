@@ -2,9 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Luyện tập tạo và sử dụng hàm 01 - Bài 5</title>
 </head>
 <body>
-$END$
 </body>
+<script>
+    let arrStar =          ["Polaris","Aldebaran","Deneb","Vega","Altair","Dubhe","Regulus"];
+    let arrConstellation = ["Ursa Minor","Taurus","Cygnus","Lyra","Aquila","Ursa Major","Leo"];
+    let yourStar = prompt("Nhập tên ngôi sao !");
+
+    if ((typeof checkYourStar(yourStar))=="number"){
+        alert(arrConstellation[checkYourStar(yourStar)]);
+    }else {
+        alert(checkYourStar(yourStar));
+    }
+    function checkYourStar(strStar) {
+        for (let i = 0; i < arrStar.length; i++) {
+            if (strStar == arrStar[i]){
+                return i;
+            }
+        }
+        let message = "Không tìm thấy kết quả !";
+        return message;
+    }
+</script>
 </html>

@@ -2,9 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Luyện tập tạo và sử dụng hàm 02 - Bài 7</title>
 </head>
 <body>
-$END$
+
 </body>
+<script>
+    let numberA = parseInt(prompt("Nhập số thứ nhất !"));
+    let numberB = parseInt(prompt("Nhập số thứ hai !"));
+
+    function swap(numA, numB) {
+       let temp = numA;
+       numA = numB;
+       numB = temp;
+       let message = "Giá trị sau khi đổi chỗ :<br> Số thứ nhất là :"+ numA +"<br> Số thứ hai là :"+ numB;
+       return message;
+    }
+    document.write(swap(numberA,numberB));
+</script>
 </html>

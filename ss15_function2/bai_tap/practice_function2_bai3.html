@@ -2,9 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Luyện tập tạo và sử dụng hàm 02 - Bài 3</title>
 </head>
 <body>
-$END$
+
 </body>
+<script>
+    let inputNumber = parseInt(prompt("Nhập số bất kì !"));
+    let result =1;
+    function getFactorial(number) {
+        for (let i = 1; i <= number; i++) {
+            result = result *i;
+        }
+        return result;
+    }
+
+    alert("Giai thừa của "+ inputNumber+" là: "+getFactorial(inputNumber));
+
+</script>
 </html>

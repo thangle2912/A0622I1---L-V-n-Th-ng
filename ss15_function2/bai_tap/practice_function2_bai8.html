@@ -2,9 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Luyện tập tạo và sử dụng hàm 02 - Bài 8</title>
 </head>
 <body>
-$END$
+
 </body>
+<script>
+    let arrNumber =[1,2,3,4,5,6,7,8,9];
+    function swap(arr) {
+        for (let i = 0; i <arr.length/2 ; i++) {
+            let temp = arr[i];
+            arr[i] = arr[arr.length-1-i];
+            arr[arr.length-1-i] = temp;
+        }
+        return  arr;
+    }
+    console.log("Mảng sau khi đảo : "+ swap(arrNumber));
+</script>
 </html>
