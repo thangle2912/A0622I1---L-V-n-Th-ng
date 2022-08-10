@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập mảng 02 - Bài 6</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arr = [];
+    let size = parseInt(prompt("Số lượng phần tử của mảng kí tự"));
+    for (let i = 0; i<size;i++){
+        let characters = prompt("Nhập phần tử thứ " + i+" cho mảng ");
+        arr.push(characters);
+    }
+    while (arr.indexOf("-")!=-1){
+        let index = arr.indexOf("-");
+        arr[index] = "_";
+    }
+    console.log(arr);
+</script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập mảng 02 - Bài 5</title>
+</head>
+<body>
+
+</body>
+<script>
+    let strA = prompt("nhập vào chuỗi a bất kỳ !");
+    let strB = prompt("nhập vào 1 chuỗi b bất kỳ !");
+    let size = strA.length;
+    let result = true;
+    for(let i = 0;i<size;i++){
+       if (strA[i]!=strB[i]){
+           result = false;
+           break;
+       }
+    }
+    if (result){
+        alert("2 chuỗi giống nhau !");
+    }else {
+        alert("2 chuỗi khác nhau !");
+    }
+</script>
+</html>

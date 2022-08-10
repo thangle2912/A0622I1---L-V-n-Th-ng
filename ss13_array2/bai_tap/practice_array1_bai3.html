@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập mảng 01 - Bài 3</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arr =[10,12,40,50,12,1,23,5,4,21];
+    let max =arr[0], sum =0;
+    let index;
+    for (let i =0;i<arr.length;i++){
+        if(arr[i]>max){
+            max = arr[i];
+            index =i;
+        }
+        sum += arr[i];
+    }
+    let avg = sum/arr.length;
+    avg.toFixed(2);
+
+    alert("Giá trị lớn nhất trong mảng là: "+max+ " và giá trị trung bình là: "+avg);
+</script>
+</html>

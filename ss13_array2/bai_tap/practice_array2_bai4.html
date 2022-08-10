@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập mảng 02 - Bài 4</title>
+</head>
+<body>
+
+</body>
+<script>
+    let str = prompt("nhập vào 1 chuỗi bất kỳ !").toString();
+    let count = 1;
+    for(let i = 0;i<str.length;i++){
+        if(str[i]===" " && str[i+1]!==""){
+            count++;
+        }
+    }
+    console.log(str);
+    console.log(count);
+</script>
+</html>

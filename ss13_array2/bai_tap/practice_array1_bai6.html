@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập mảng 01 - Bài 6</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arr =[];
+    let size = parseInt(prompt("Số lượng phần tử của mảng"));
+    let result = false;
+    for (let i = 0; i<size;i++){
+        let number = parseInt(prompt("Nhập phần tử thứ " + i));
+        arr.push(number);
+    }
+    let numV = parseInt(prompt("Nhập số nguyên V"));
+    for (let i =0;i<arr.length;i++){
+        if (arr.indexOf(numV) != -1){
+            alert("V is in the array");
+            break;
+        }else {
+            result = true;
+        }
+    }
+    if (result){
+        alert("V is in not the array");
+    }
+    console.log(arr);
+
+</script>
+</html>

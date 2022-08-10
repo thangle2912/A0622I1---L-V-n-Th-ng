@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập mảng 01 - Bài 5</title>
+</head>
+<body>
+
+</body>
+<script>
+    let str =prompt("Nhập 1 chuỗi bất kì");
+    let generator =["a", "ă", "â", "e", "ê", "i", "o", "ô", "ơ", "u", "ư", "y"]
+    let count=0;
+    for (let i =0;i<str.length;i++){
+        if (generator.indexOf(str[i]) != -1){
+            count ++;
+        }
+    }
+    alert("Số các nguyên âm trong chuỗi là: "+count);
+</script>
+</html>

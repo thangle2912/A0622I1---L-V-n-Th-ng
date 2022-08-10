@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập mảng 01 - Bài 8</title>
+</head>
+<body>
+
+</body>
+<script>
+
+    let a = [];
+    let b = [];
+    let c = [];
+    let sizeA = parseInt(prompt("Số lượng phần tử của mảng a"));
+    for (let i = 0; i<sizeA;i++){
+        let number = parseInt(prompt("Nhập phần tử thứ " + i+" cho mảng a"));
+        a.push(number);
+    }
+    let sizeB = parseInt(prompt("Số lượng phần tử của mảng b"));
+    for (let i = 0; i<sizeB;i++){
+        let number = parseInt(prompt("Nhập phần tử thứ " + i+" cho mảng b"));
+        b.push(number);
+    }
+    c =a.concat(b);
+    console.log(c);
+</script>
+</html>

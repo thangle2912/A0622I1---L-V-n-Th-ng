@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập mảng 01 - Bài 8</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arr =[];
+    let size = parseInt(prompt("Số lượng phần tử của mảng"));
+    let result = false;
+    for (let i = 0; i<size;i++){
+        let number = parseInt(prompt("Nhập phần tử thứ " + i));
+        arr.push(number);
+    }
+    console.log(arr);
+
+    for (let i =0;i<arr.length;i++){
+        for (let j = i+1;j<arr.length;j++){
+            if (arr[i]<arr[j]){
+                let temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+    console.log(arr);
+
+</script>
+</html>
