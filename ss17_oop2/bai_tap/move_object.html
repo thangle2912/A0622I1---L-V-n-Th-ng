@@ -2,9 +2,82 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
-<body>
-$END$
+<body onload="docRead()">
+
+<div id="img"></div>
 </body>
+<script>
+    function docRead() {
+
+        window.addEventListener("keydown", moveSelection);
+    }
+    class Hero {
+        constructor(image, top, left, size) {
+            this.image = image;
+            this.top = top;
+            this.left = left;
+            this.size = size;
+        }
+        initHero() {
+            return '<img width="' + this.size + '"' +
+                ' height="' + this.size + '"' +
+                ' src="' + this.image + '"' +
+                ' style="top: ' + this.top +
+                'px; left:' + this.left +
+                'px;position:absolute;" />';
+        }
+        downArrowPressed(){
+            this.top+=5;
+            console.log('ok: ' + this.top);
+        }
+        upArrowPressed(){
+            this.top-=5;
+            console.log('ok: ' + this.top);
+        }
+        rightArrowPressed(){
+            this.left+=5;
+            console.log('ok: ' + this.left);
+        }
+        leftArrowPressed(){
+            this.left-=5;
+            console.log('ok: ' + this.left);
+        }
+    }
+    let hero = new  Hero("./img/hero.png",50,50,200);
+    document.getElementById("img").innerHTML = hero.initHero();
+    function moveSelection(evt) {
+        switch (evt.keyCode) {
+            case 37:
+                leftArrowPressed();
+                break;
+            case 39:
+                rightArrowPressed();
+                break;
+            case 40:
+                downArrowPressed();
+                break;
+            case 38:
+                upArrowPressed();
+                break;
+        }
+    }
+    function upArrowPressed() {
+        hero.upArrowPressed();
+        document.getElementById("img").innerHTML = hero.initHero();
+    }
+    function downArrowPressed() {
+        hero.downArrowPressed();
+        document.getElementById("img").innerHTML = hero.initHero();
+    }
+    function rightArrowPressed() {
+        hero.rightArrowPressed();
+        document.getElementById("img").innerHTML = hero.initHero();
+    }
+    function leftArrowPressed() {
+        hero.leftArrowPressed();
+        document.getElementById("img").innerHTML = hero.initHero();
+    }
+</script>
 </html>
