@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img src="./img/light_off.png" id="img" height="500">
+<button onclick="switchButtonOn()">Bật đèn</button>
+<button onclick="switchButtonOff()">Tắt đèn</button>
+
+</body>
+<script>
+
+    function switchButtonOn() {
+        let electricLamp1 = new ElectricLamp(false);
+        let switchButton1 = new SwitchButton();
+        switchButton1.connectToLamp(electricLamp1);
+        if (electricLamp1.getStatus() == false) {
+            switchButton1.switchOn();
+        }
+
+    }
+
+    function switchButtonOff() {
+        let electricLamp1 = new ElectricLamp(true);
+        let switchButton1 = new SwitchButton();
+        switchButton1.connectToLamp(electricLamp1);
+        if (electricLamp1.getStatus() == true) {
+            switchButton1.switchOff();
+        }
+    }
+
+    class ElectricLamp {
+        constructor(status) {
+            this.status = status;
+        }
+
+        turnOn() {
+            if (this.status == false) {
+                this.status = true;
+                document.getElementById("img").src = "./img/light_on.png";
+            }
+        }
+
+        turnOff() {
+            if (this.status == true) {
+                this.status = false;
+                document.getElementById("img").src = "./img/light_off.png";
+            }
+        }
+
+        getStatus() {
+            return this.status;
+        }
+    }
+
+    class SwitchButton {
+        constructor() {
+            this.status = false;
+            this.electricLamp = null;
+        }
+
+        connectToLamp(lamp) {
+            this.electricLamp = lamp;
+        }
+
+        switchOn() {
+            if (this.electricLamp.getStatus() == false) {
+                this.electricLamp.turnOn();
+            }
+        }
+
+        switchOff() {
+            if (this.electricLamp.getStatus() == true) {
+                this.electricLamp.turnOff();
+            }
+        }
+    }
+
+</script>
+</html>
